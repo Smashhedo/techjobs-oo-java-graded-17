@@ -21,11 +21,11 @@ public class JobTest {
                                   new Location("Desert"), new PositionType("Quality control"),
                                   new CoreCompetency("Persistence"));
 
-//                assertTrue();
-//                assertTrue();
-//                assertTrue();
-//                assertTrue();
-//                assertTrue();
+                assertTrue(aJobObject3.getEmployer() instanceof Employer);
+                assertTrue(aJobObject3.getName() instanceof String);
+                assertTrue(aJobObject3.getLocation() instanceof Location);
+                assertTrue(aJobObject3.getPositionType() instanceof PositionType);
+                assertTrue(aJobObject3.getCoreCompetency() instanceof CoreCompetency);
 
                 assertEquals("Product tester", aJobObject3.getName());
                 assertEquals("ACME", aJobObject3.getEmployer());
@@ -45,6 +45,17 @@ public class JobTest {
                 new CoreCompetency("Persistence"));
 
         aJobObject4.equals(aJobObject5);
+    }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+            Job emptyLine = new Job();
+        assertEquals(emptyLine.toString(), System.lineSeparator());
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
 
     }
+
 }
