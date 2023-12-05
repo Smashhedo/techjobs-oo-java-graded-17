@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static org.junit.Assert.assertEquals;
+
 public class Job {
 
     private int id;
@@ -98,8 +100,24 @@ public class Job {
     }
 
     public String toString() {
-        String emptyLine = System.lineSeparator();
-        return emptyLine;
+        
+//        ID:  _______
+//        Name: _______
+//        Employer: _______
+//        Location: _______
+//        Position Type: _______
+//        Core Competency: _______
+
+        String expectedString = System.lineSeparator() +
+                "ID: " + this.getId() + System.lineSeparator() +
+                "Name: " + this.getName() + System.lineSeparator() +
+                "Employer: " + this.getEmployer() + System.lineSeparator() +
+                "Location: " + this.getLocation() + System.lineSeparator() +
+                "Position Type: " + this.getPositionType() + System.lineSeparator() +
+                "Core Competency: " + this.getCoreCompetency();
+
+        return expectedString;
     }
+
 }
 

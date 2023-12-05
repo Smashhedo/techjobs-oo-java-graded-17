@@ -1,6 +1,7 @@
 package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
+import org.yaml.snakeyaml.events.Event;
 
 import static org.junit.Assert.*;
 
@@ -56,6 +57,30 @@ public class JobTest {
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
 
+//        ID:  _______
+//        Name: _______
+//        Employer: _______
+//        Location: _______
+//        Position Type: _______
+//        Core Competency: _______
+
+        Job aJob = new Job("Product tester", new Employer("ACME"),
+                new Location("Desert"), new PositionType("Quality control"),
+                new CoreCompetency("Persistence"));
+        String expectedString = System.lineSeparator() +
+                "ID: " + aJob.getId() + System.lineSeparator() +
+                "Name: Product tester" + System.lineSeparator() +
+                "Employer: ACME" + System.lineSeparator() +
+                "Location: Desert" + System.lineSeparator() +
+                "Position Type: Quality control" + System.lineSeparator() +
+                "Core Competency: Persistence";
+        assertEquals(expectedString, aJob.toString());
     }
 
+    @Test
+    public void testToStringHandlesEmptyField() {
+
+
+    }
 }
+
